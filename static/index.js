@@ -69,6 +69,18 @@ L.tileLayer('https://a.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 map.locate({enableHighAccuracy: true});
+map.on('locationfound', e=> {
+  console.log(e);
+  const coords = [e.latlng.lat,e.latlng.lng];
+  const marker = L.circle(coords, {
+    color: 'red',
+    fillColor: 'red',
+    radius: 500
+    
+  });
+  marker.bindPopup('You are Here!');
+  map.addLayer(marker);
+})
 }
 
 function populateData(results) {
