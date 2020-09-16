@@ -17,6 +17,8 @@ searchForm.addEventListener('submit', async e => {
     city = 'Brisbane';
   }     
 
+
+
   const query = e.target.querySelector('#restaurant-name').value; // for the restaurant name
   if (query === '') {
     return
@@ -92,6 +94,7 @@ function populateData(results) {
     newResult.querySelector('.result-price').innerText = '$'.repeat(result.price);
     newResult.querySelector('.result-thumbnail').src = result.thumbnail;
     newResult.querySelector('.result-website').href = result.url;
+    newResult.querySelector('.result-timing').innerText = result.timings;
     resultArea.appendChild(newResult);
   });
 }

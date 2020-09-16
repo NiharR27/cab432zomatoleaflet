@@ -17,6 +17,20 @@ const cityid = '298';
 
 app.use(require('./routes/'));
 
+// app.post('/location', async (req,res) => {
+//   try {
+//     cityid = req.body.q;
+//     const data = await zomato.search({query: cityid})
+
+//     const cityinfo = data.cityinfo.map
+//   }catch(err) {
+//     res.status(500).send('Error grabbing information')
+//   }
+// })
+
+//make post request to the server
+
+
 
 app.post('/search', async (req, res) => {
   try {
@@ -32,6 +46,7 @@ app.post('/search', async (req, res) => {
         price: r.price_range,
         thumbnail: r.thumb,
         rating: r.user_rating.aggregate_rating,
+        timings: r.timings,
       }
     })
     res.json({ restaurants})
