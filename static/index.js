@@ -49,10 +49,6 @@ searchForm.addEventListener('submit', async e => {
    }
 
 
-   
-
-
-
   //   results.foreach(result => {
   //    marker = l.marker([result.location.latitude,result.location.longitude]);
   //    marker.bindpopup(result.name);
